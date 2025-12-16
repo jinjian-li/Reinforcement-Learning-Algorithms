@@ -6,55 +6,44 @@
 
 ## 📖 Overview
 
-This repository contains implementations of fundamental and advanced **Reinforcement Learning (RL)** algorithms, developed as part of the Master's coursework in Machine Learning and Robotics. 
+This repository contains implementations of fundamental and advanced **Reinforcement Learning (RL)** algorithms. The project progresses from classical tabular methods to state-of-the-art Deep RL algorithms (SAC) and Stochastic Search methods.
 
-The project bridges the gap between **mathematical derivation** and **practical implementation**, progressing from classical tabular methods to state-of-the-art Deep RL algorithms (SAC) and Stochastic Search methods for robotic control.
-
-## 🗂️ Project Modules
-
-The codebase is organized into four main modules. Each implementation is self-contained in a Jupyter Notebook with detailed mathematical explanations.
-
-| Module | Algorithm / Technique | Key Concepts |
-| :--- | :--- | :--- |
-| **01. Tabular RL** | **Q-Learning, SARSA** | Bellman Equation, Value Iteration, Off-policy Control |
-| **02. Policy Gradients** | **REINFORCE** | Neural Networks, Policy Optimization, Monte Carlo Sampling |
-| **03. MDP Design** | **SAC (Soft Actor-Critic)** | **Reward Shaping**, Continuous Control, Max-Entropy RL |
-| **04. Stochastic Search** | **Natural Gradient (NPG)** | Information Geometry, KL-Divergence, Trust Region |
+> **💡 Note for Reviewers:**
+> This repository contains **extensive visualization results** (over 100+ plots).
+> To keep this README clean, please click the links below to view specific result graphs or open the Notebooks for full implementation details.
 
 ---
 
-## 💻 Implementation Details
+## 🗂️ Project Modules & Results
 
 ### 1. Tabular RL & Foundations
-* **Focus:** Solving discrete environments (GridWorld) using dynamic programming.
-* **Key Implementation:**
-    * Analyzed convergence properties of TD-error.
-    * Compared On-policy (SARSA) vs. Off-policy (Q-Learning) strategies.
+* **Algorithm:** Value Iteration, Policy Iteration, Q-Learning (Off-policy).
+* **Code:** [📄 01_Tabular_RL_Fundamentals.ipynb](01_Tabular_RL_Fundamentals.ipynb)
+* **Key Results (Click to view):**
+    * [📈 Policy Iteration Convergence](assets/policy_iteration.png)
+    * [📈 Value Iteration Convergence](assets/value_iteration.png)
+    * [📈 Q-Learning Performance](assets/q_learning.png)
 
 ### 2. Deep Policy Gradients (REINFORCE)
-* **Focus:** Scaling RL to continuous action spaces using Neural Networks.
-* **Key Implementation:**
-    * Implemented the **REINFORCE** algorithm from scratch using **PyTorch**.
-    * Designed a Gaussian Policy Network for continuous control tasks.
-    * Applied variance reduction techniques to stabilize training.
+* **Algorithm:** REINFORCE (Monte Carlo Policy Gradient) with Baseline.
+* **Code:** [📄 02_Deep_Policy_Gradients_REINFORCE.ipynb](02_Deep_Policy_Gradients_REINFORCE.ipynb)
+* **Key Results (Click to view):**
+    * [📊 Deep Policy Gradients Training Curve](assets/deep_policy_gradients.png)
+    * [📊 Natural Policy Gradient Comparison](assets/natural_policy_gradient.png)
+    * [📊 REINFORCE Algorithm Performance](assets/reinforce.png)
+    * [📜 Policy Gradient Theorem Derivation](assets/policy_gradient_theorem.png)
 
 ### 3. MDP Design & Soft Actor-Critic (SAC)
-* **Focus:** Designing the Markov Decision Process (MDP) for a complex robotic task.
-* **Key Implementation:**
-    * **Reward Shaping:** Engineered a dense reward function for a Multi-phase Reacher task.
-    * **Algorithm:** Deployed **Soft Actor-Critic (SAC)** for sample-efficient learning.
-    * **Result:** Successfully trained the agent to reach dynamic targets with high precision.
-
-### 4. Stochastic Search & Natural Gradients
-* **Focus:** Optimization beyond standard backpropagation using Information Geometry.
-* **Key Implementation:**
-    * Derived the closed-form solution for **Information Geometric Policy Update**.
-    * Implemented **MORE (Model-Based Relative Entropy)** stochastic search.
-    * Utilized **KL-Divergence** constraints to ensure safe policy updates (Trust Region).
+* **Algorithm:** Soft Actor-Critic (SAC), Reward Shaping, Continuous Control.
+* **Code:** [📄 03_MDP_Design_SAC.ipynb](03_MDP_Design_SAC.ipynb)
+* **Key Results (Click to view):**
+    * [🤖 Multiphase Reacher Robot Demo](assets/Q4_multiphase_reacher.png)
+    * [📉 Infinite Horizon Analysis](assets/Q3a_infinite-horizon.png)
+    * [📉 Discount Factor Analysis](assets/Q3c_discount.png)
 
 ---
 
-## 🛠️ Tech Stack & Dependencies
+## 🛠️ Tech Stack
 
 * **Language:** Python 3.x
 * **Deep Learning:** PyTorch
